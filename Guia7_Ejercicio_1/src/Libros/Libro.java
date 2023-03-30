@@ -1,6 +1,7 @@
 
 package Libros;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -14,6 +15,7 @@ public String autor;
 public int paginas;
 public int isbn;
     public Libro() {
+        
     }
 Scanner sc = new Scanner(System.in);
     public Libro(String titulo, String autor, int paginas,int isbn) {
@@ -22,8 +24,9 @@ Scanner sc = new Scanner(System.in);
         this.paginas = paginas;
         this.isbn=isbn;
     }
-    
+    ArrayList<Libro> lista = new ArrayList<Libro>();
 public void cargarLibros(){
+    
     System.out.println("ingrese titulo");
     titulo= sc.next();
     System.out.println("ingrese autor");
@@ -32,12 +35,16 @@ public void cargarLibros(){
     paginas=sc.nextInt();
     System.out.println("ingrese numero de ISBN");
     isbn=sc.nextInt();
+    Libro libro = new Libro(titulo, autor, paginas,isbn);
+        lista.add(libro);
+        System.out.println("El libro se cargo correctamente...");
 }
 public void  mostrarLibro() {
-        System.out.println("ISBN: " + isbn);
-        System.out.println("Título: " + titulo);
-        System.out.println("Autor: " + autor);
-        System.out.println("Número de páginas: " + paginas);
+    for (Libro libro : lista) {
+        System.out.println(libro.toString());
+        System.out.println("----------------");
+    }
+        
     }
 
 
