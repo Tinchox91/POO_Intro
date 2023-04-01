@@ -8,11 +8,15 @@ Método perimetro(): para calcular el perímetro (Perimetro=2*π*radio).
 */
 package Circunferencia;
 
+import java.util.Scanner;
+
 
 public class Circunferencia {
     private float radio;
-
+    
+ public Scanner leer = new Scanner (System.in);
     public Circunferencia() {
+       
     }
 
     public Circunferencia(float radio) {
@@ -26,7 +30,16 @@ public class Circunferencia {
     public void setRadio(float radio) {
         this.radio = radio;
     }
-    
-    
+   void  radioo(){
+            System.out.println("ingrese el radio");
+            radio= leer.nextFloat();           
+        
+    }
+    double area() {
+    return Math.PI * radio * radio;
+}
+    double perimetro() {
+    return (2* Math.PI) * radio ;
+}
     
 }
